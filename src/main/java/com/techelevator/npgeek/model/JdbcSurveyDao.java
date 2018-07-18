@@ -22,10 +22,16 @@ public class JdbcSurveyDao implements SurveyDao{
 	@Override
 	public List<Park> topParks() {
 		List<Park> topParks = new ArrayList<>();
-		String sqlSelectTopParks = "SELECT parkcode, COUNT(parkcode) AS topsurveys FROM survey_result ORDER BY topsurveys SORT BY DESC LIMIT 5";
+		String sqlSelectTopParks = "SELECT *, COUNT(parkcode) AS topsurveys FROM survey_result ORDER BY topsurveys SORT BY DESC LIMIT 5";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectTopParks);
 		while(results.next()) {
-			Park newPark = mapResultsToPark(results);
+			Park newPark = new Park();
+			newPark.setParkCode(results.getString("parkcode"));
+			newPark.setParkName(results.getString("parkname"));
+			newPark.setParkDescription(results.getString("parkdescription"));
+			newPark.setInspirationalQuote(results.getString("inspirationalquote"));
+			newPark.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
+			
 			topParks.add(newPark);
 		}
 		return topParks;
@@ -33,9 +39,8 @@ public class JdbcSurveyDao implements SurveyDao{
 	
 	@Override
 	public void save(Survey survey) {
-		String sqlInsertSurvey = "INSERT INTO survey_result(username, rating, review_title, review_text, review_date) VALUES (?,?,?,?,?) RETURNING review_id";
-		long id = jdbcTemplate.queryForObject(sqlInsertReview, Long.class, review.getUsername(), review.getRating(), review.getTitle(), review.getText(), review.getDateSubmitted());
-		review.setId(id);
+		String sqlInsertSurvey = "INSERT INTO survey_result(parkcode, emailaddress, state, activitylevel) VALUES (?,?,?,?)";
+		long id = jdbcTemplate.queryForObject(sqlInsertSurvey, Long.class, survey.getParkCode(), survey.getEmailAddress(), survey.getState(), survey.getActivityLevel());
 	}
 
 }
