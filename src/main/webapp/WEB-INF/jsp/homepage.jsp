@@ -7,7 +7,7 @@
        			<div class = "parkImage">
        				<c:url var="parkDetailUrl" value="/parkDetail?parkId=${park.parkCode}"/>
        				<a href="${parkDetailUrl}">
-       					<c:url var = "parkImgUrl" value = "/img/${park.imageName}"/>
+       					<c:url var = "parkImgUrl" value = "/img/${park.parkCode}"/>
        						<img src="${parkImgUrl}"/>
        				</a>
        				</div>

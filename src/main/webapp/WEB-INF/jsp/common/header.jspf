@@ -22,7 +22,7 @@
             <c:url var="homepageUrl" value="/"/>
             <li><a href="${homepageUrls}">Home</a></li>
             <c:url var="surveyUrl" value="/survey" />
-            <li><a href="${surveyeUrl}">Survey</a></li>
+            <li><a href="${surveyUrl}">Survey</a></li>
         </ul>
         
     </nav>
