@@ -1,5 +1,8 @@
 package com.techelevator.npgeek.model;
 
-public interface WeatherDao {
+import java.util.List;
 
+public interface WeatherDao {
+List<Weather> getFirstDayForecast();
+List<Weather> getRestOfForecast();
 }

@@ -2,7 +2,7 @@
 <c:set var="pageTitle" value= "National Parks"/>
 <%@include file="common/header.jspf" %>
 <div class = "DetailPage">
-       <c:forEach var = "park" items ="${parkList}">
+       <c:forEach var = "park" items ="${parks}">
        		<div class ="parkDiv">
        			<div class = "parkImage">
        				<c:url var="parkDetailUrl" value="/parkDetail?parkId=${park.parkCode}"/>
