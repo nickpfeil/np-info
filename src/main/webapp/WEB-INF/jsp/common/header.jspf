@@ -5,20 +5,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Recipe List View</title>
+    <title>National Parks</title>
     <c:url var="stylesheetUrl" value="/css/site.css" />
     <link rel="stylesheet" href="${stylesheetUrl}" />
 </head>
 <body>
     <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
+    <div class = "parkImage">
+       				<c:url var = "parkImgUrl" value = "/img/logo.png"/>
+       						<img src="${parkImgUrl}"/>
+  		 	</div>
+        <h1>National Parks Capstone</h1>        
     </header>
     <nav>
         <ul>
-            <c:url var="recipeTilesUrl" value="/recipeTiles" />
-            <li><a href="${recipeTilesUrl}">Tile Layout</a></li>
-            <c:url var="recipeTableUrl" value="/recipeTable" />
-            <li><a href="${recipeTableUrl}">Table Layout</a></li>
+            <c:url var="homepageUrl" value="/"/>
+            <li><a href="${homepageUrls}">Home</a></li>
+            <c:url var="surveyUrl" value="/survey" />
+            <li><a href="${surveyeUrl}">Survey</a></li>
         </ul>
         
     </nav>
