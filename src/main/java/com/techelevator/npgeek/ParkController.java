@@ -1,6 +1,7 @@
 package com.techelevator.npgeek;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.techelevator.npgeek.model.Park;
 import com.techelevator.npgeek.model.ParkDao;
 
-
+@Controller
 public class ParkController {
 	
 	@Autowired
@@ -20,13 +21,7 @@ public class ParkController {
 		
 		modelHolder.put("parks", parkDao.getAllParks());
 		
-		return "homePage";
-	}
-	
-	@RequestMapping(path="/survey", method=RequestMethod.GET)
-	public String displaySurvey(ModelMap modelHolder) {
-
-		return "survey";
+		return "homepage";
 	}
 	
 	@RequestMapping(path="/indParksDeets", method=RequestMethod.GET)

@@ -16,14 +16,6 @@ public class SurveyController {
 	
 	@Autowired
 	private SurveyDao surveyDao;
-
-	/*@RequestMapping(path="/", method=RequestMethod.GET)
-	public String displayHomePage(ModelMap modelHolder) {
-		
-		modelHolder.put("parks", surveyDao.getAllParks());
-		
-		return "homePage";
-	}*/
 	
 	@RequestMapping(path="/surveyResults", method=RequestMethod.GET)
 	public String surveyResults(ModelMap modelHolder) {

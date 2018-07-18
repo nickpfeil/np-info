@@ -5,9 +5,9 @@
        <c:forEach var = "park" items ="${parks}">
        		<div class ="parkDiv">
        			<div class = "parkImage">
-       				<c:url var="parkDetailUrl" value="/parkDetail?parkId=${park.parkCode}"/>
+       				<c:url var="parkDetailUrl" value="/parkDetail?parkCode=${park.parkCode}"/>
        				<a href="${parkDetailUrl}">
-       					<c:url var = "parkImgUrl" value = "/img/${park.parkCode}"/>
+       					<c:url var = "parkImgUrl" value = "/img/parks/${park.parkCode}.jpg"/>
        						<img src="${parkImgUrl}"/>
        				</a>
        				</div>
@@ -16,3 +16,8 @@
        				<div class = "parkInspirationalQoute">
        					<c:out value = "${park.inspirationalQuote}"/>
        				</div>
+       			</div>
+       	</c:forEach>
+  	</div>
+<%@include file="common/footer.jspf" %>
+       	
