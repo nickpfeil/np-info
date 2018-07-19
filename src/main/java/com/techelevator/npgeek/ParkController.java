@@ -1,5 +1,7 @@
 package com.techelevator.npgeek;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -36,11 +38,25 @@ public class ParkController {
 				modelHolder.put("park", p);
 				break;
 			}
-		}
+		} 
 		
 		modelHolder.put("firstDay", weatherDao.getParkFirstDayForecast(parkCode));
 		modelHolder.put("fourDay", weatherDao.getParkRestOfForecast(parkCode));
 		
 		return "indParksDeets";
 	}
+	
+	@RequestMapping(path="/indParksDeets", method=RequestMethod.POST)
+	public String switchTempSystem(@RequestParam String tempSystem, @RequestParam String parkCode, HttpSession userSession) {
+		
+		if(tempSystem.equals("Fahrenheit") || tempSystem.equals(null)) {
+		userSession.setAttribute("tempSystem", tempSystem);
+		} else {
+			userSession.setAttribute("tempSystem", tempSystem);
+		}
+		
+		return "redirect:/indParksDeets?parkCode=" + parkCode;
+	}
+	
+	
 }

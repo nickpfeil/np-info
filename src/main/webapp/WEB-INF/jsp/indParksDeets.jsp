@@ -143,6 +143,30 @@
 			</div>
 		</c:forEach>
 	</div>
+	<div>
+		<c:choose>
+			<c:when test="${tempSystem == 'Fahrenheit' || tempSystem == null}">
+				<c:url var="tempSystemUrl" value="/indParksDeets" />
+				<form action="${tempSystemUrl}" method="POST">
+					<div class="form-group">
+					<input type="hidden" id="parkCode" name="parkCode" value="${park.parkCode}" class="form-control" />
+					<input type="hidden" id="tempSystem" name="tempSystem" value="Celsius" class="form-control" />
+					</div>
+					<button type="submit" class="btn btn-primary">Celsius</button>
+				</form>
+			</c:when>
+			<c:otherwise>
+				<c:url var="tempSystemUrl" value="/indParksDeets" />
+				<form action="${tempSystemUrl}" method="POST">
+					<div class="form-group">
+					<input type="hidden" id="parkCode" name="parkCode" value="${park.parkCode}" class="form-control" />
+					<input type="hidden" id="tempSystem" name="tempSystem" value="Fahrenheit" class="form-control" />
+					</div>
+					<button type="submit" class="btn btn-primary">Fahrenheit</button>
+				</form>
+			</c:otherwise>
+		</c:choose>
+	</div>
 </div>
 
 
