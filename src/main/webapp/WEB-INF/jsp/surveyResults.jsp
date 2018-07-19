@@ -3,13 +3,13 @@
 <%@include file="common/header.jspf"%>
 <div class = "surveyResultsPage">
   		 	<div class= "surveyDetails">
-  		 		<c:forEach var= "survey" items="${surveys}">
+  		 		<c:forEach var= "survey" items="${parks}">
   		 	<div class="indReview">
   		 	<div class = "review">
-       			<c:out value = "${survey.userState}"/>
+       			<c:out value = "${parks.userState}"/>
        		</div>
        		<div class = "surveyText">
-       		<c:out value=" Recent Comments: ${survey.text}"></c:out>
+       		<c:out value=" Recent Comments: ${parks.text}"></c:out>
        		</div>
        		</div>
        	</c:forEach>
