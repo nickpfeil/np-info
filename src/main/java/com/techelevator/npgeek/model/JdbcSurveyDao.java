@@ -31,8 +31,9 @@ public class JdbcSurveyDao implements SurveyDao{
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectTopParks);
 		while(results.next()) {
 			Park newPark = new Park();
-			newPark.setParkCode(results.getString("parkcode"));
+			newPark.setParkCode(results.getString("parkcode").toLowerCase());
 			newPark.setParkName(results.getString("parkname"));
+			newPark.setState(results.getString("state"));
 			newPark.setParkDescription(results.getString("parkdescription"));
 			newPark.setInspirationalQuote(results.getString("inspirationalquote"));
 			newPark.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));

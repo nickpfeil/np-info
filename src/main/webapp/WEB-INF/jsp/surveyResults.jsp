@@ -2,17 +2,30 @@
 <c:set var="pageTitle" value="Survey Results" />
 <%@include file="common/header.jspf"%>
 <div class="surveyResultsPage">
-	<div class="surveyDetails">
+	<ol>
 		<c:forEach var="park" items="${parks}">
-			<div class="indPark">
-				<div class="parkName">
-					<c:out value="${park.state}" />
+			<li><div class="surveyDetails">
+					<div class="parkImage">
+						<c:url var="indParksDeetsUrl"
+							value="/indParksDeets?parkCode=${park.parkCode}" />
+						<a href="${indParksDeetsUrl}"> <c:url var="parkImgUrl"
+								value="/img/parks/${park.parkCode}.jpg" /> <img
+							src="${parkImgUrl}" />
+						</a>
+					</div>
 				</div>
-				<div class="parkDescription">
-					<c:out value=" Recent Comments: ${park.parkDescription}"></c:out>
-				</div>
-			</div>
+				<div class="descriptions">
+					<div class="indPark">
+						<div class="parkName">
+							<c:out value="${park.state}" />
+						</div>
+						<div class="parkDescription">
+							Park Description
+							<c:out value="${park.parkDescription}"></c:out>
+						</div>
+					</div>
+				</div></li>
 		</c:forEach>
-	</div>
+	</ol>
 </div>
 <%@include file="common/footer.jspf"%>
