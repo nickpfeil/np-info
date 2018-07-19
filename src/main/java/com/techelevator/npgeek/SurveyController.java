@@ -33,7 +33,6 @@ public class SurveyController {
 	@RequestMapping(path="/survey", method=RequestMethod.POST)
 	public String survey(
 				@RequestParam String parkCode,
-				@RequestParam Long surveyId,
 				@RequestParam String emailAddress,
 				@RequestParam String state,
 				@RequestParam String activityLevel,
@@ -41,7 +40,6 @@ public class SurveyController {
 			) {
 			Survey newSurvey = new Survey();
 			newSurvey.setParkCode(parkCode);
-			newSurvey.setSurveyId(surveyId);
 			newSurvey.setEmailAddress(emailAddress);
 			newSurvey.setState(state);
 			newSurvey.setActivityLevel(activityLevel);

@@ -3,6 +3,6 @@ package com.techelevator.npgeek.model;
 import java.util.List;
 
 public interface WeatherDao {
-List<Weather> getFirstDayForecast();
-List<Weather> getRestOfForecast();
+	public Weather getParkFirstDayForecast(String parkCode);
+	public List<Weather> getParkRestOfForecast(String parkCode);
 }

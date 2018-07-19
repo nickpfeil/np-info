@@ -5,8 +5,8 @@
        <c:forEach var = "park" items ="${parks}">
        		<div class ="parkDiv">
        			<div class = "parkImage">
-       				<c:url var="parkDetailUrl" value="/parkDetail?parkCode=${park.parkCode}"/>
-       				<a href="${parkDetailUrl}">
+       				<c:url var="indParksDeetsUrl" value="/indParksDeets?parkCode=${park.parkCode}"/>
+       				<a href="${indParksDeetsUrl}">
        					<c:url var = "parkImgUrl" value = "/img/parks/${park.parkCode}.jpg"/>
        						<img src="${parkImgUrl}"/>
        				</a>

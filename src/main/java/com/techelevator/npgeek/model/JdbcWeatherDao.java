@@ -20,30 +20,29 @@ public class JdbcWeatherDao implements WeatherDao{
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	@Override
-	public List<Weather> getFirstDayForecast() {
-		List<Weather> parkForecasts = new ArrayList<>();
-		String sqlSelectParkForecasts = "SELECT * FROM weather WHERE parkcode ? AND fivedayforecastvalue = 1";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectParkForecasts);
-		while(results.next()) {
+	public Weather getParkFirstDayForecast(String parkCode) {
+		String sqlSelectFirstForecast = "SELECT * FROM weather WHERE parkcode = ? AND fivedayforecastvalue = 1;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectFirstForecast, parkCode.toUpperCase());
+		if(results.next()) {
 			Weather newForecast = mapResultsToWeather(results);
-			parkForecasts.add(newForecast);
+			return newForecast;
 		}
-		return parkForecasts;
+		return null;
 	}
 	@Override
-	public List<Weather> getRestOfForecast() {
-		List<Weather> restOfForecast = new ArrayList<>();
-		String sqlSelectRestOfForecasts = "SELECT * FROM weather WHERE parkcode ? AND fivedayforecastvalue BETWEEN 2 and 5";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectRestOfForecasts);
+	public List<Weather> getParkRestOfForecast(String parkCode) {
+		List<Weather> fourDayForecast = new ArrayList<>();
+		String sqlSelectRestOfForecasts = "SELECT * FROM weather WHERE parkcode = ? AND fivedayforecastvalue BETWEEN 2 AND 5 ORDER BY fivedayforecastvalue ;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectRestOfForecasts, parkCode.toUpperCase());
 		while(results.next()) {
 			Weather newForecast = mapResultsToWeather(results);
-			restOfForecast.add(newForecast);
+			fourDayForecast.add(newForecast);
 		}
-		return restOfForecast;
+		return fourDayForecast;
 	}
 	public Weather mapResultsToWeather(SqlRowSet results) {
 		Weather newForecast = new Weather();
-		newForecast.setParkCode(results.getString("parkcode"));
+		newForecast.setParkCode(results.getString("parkcode").toLowerCase());
 		newForecast.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
 		newForecast.setLow(results.getInt("low"));
 		newForecast.setHigh(results.getInt("high"));

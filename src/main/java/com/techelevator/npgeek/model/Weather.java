@@ -7,15 +7,17 @@ public class Weather {
 	private	int low;
 	private	int high;
 	private	String forecast;
+	
+	
 	public String getParkCode() {
 		return parkCode;
 	}
 	public void setParkCode(String parkCode) {
 		this.parkCode = parkCode;
 	}
-	public int getFiveDayForecastValue() {
-		return fiveDayForecastValue;
-	}
+	//public int getFiveDayForecastValue() {
+	//	return fiveDayForecastValue;
+	//}
 	public void setFiveDayForecastValue(int fiveDayForecastValue) {
 		this.fiveDayForecastValue = fiveDayForecastValue;
 	}
