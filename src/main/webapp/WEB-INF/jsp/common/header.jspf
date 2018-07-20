@@ -9,19 +9,27 @@
     <c:url var="stylesheetUrl" value="/css/site.css" />
     <link rel="stylesheet" href="${stylesheetUrl}" />
 </head>
-<body>
+<body class="page">
     <header>
     <div class = "headerImage">
-       			<img src="https://d3hne3c382ip58.cloudfront.net/resized/750x420/national-parks-wonders-summer-2018-tour-2-259323_0.JPG"width="device-width"/>
-  		 			<div class="bottom-right">Your Park Adventure Starts Here</div> 
+       			<img src="img/Half_Dome_from_Glacier_Point,_Yosemite_NP_-_Diliff.jpg"/>
+  		 			<div class="text-block">
+  		 			<h2>Your Park Adventure Starts Here</h2>
+  		 			</div> 
   	</div>     
     </header>
     <nav>
-    <div class="links">
-          				  <c:url var="homepageUrl" value="/"/>
-         					  <a href="${homepageUrls}">Home</a>
-         			      <c:url var="surveyUrl" value="/survey" />
-           					 <a href="${surveyUrl}">Survey</a>
-      				 </div>
+    		<div class="links">
+   	  		<c:url var="homepageUrl" value="/"/>
+    				<form action="${homepageUrl}">
+    				<input type="submit" value="HOME" class="homeButton"/>
+				</form>
+		<div class="surveyButton">
+          	<c:url var="surveyUrl" value="/survey" />      
+           		<form action="${surveyUrl}">
+    				<input type="submit" value="SURVEY" />
+				</form>		
+		</div>
+      	</div>
     </nav>
     <section id="main-content">

@@ -100,8 +100,8 @@
 				</c:choose>
 			</div>
 		</div>
+		<div class="fourDay">
 		<c:forEach items="${fourDay}" var="day">
-			<div class="fourDay">
 				<div class="fourDayTemp">
 				<c:choose>
 					<c:when test="${tempSystem == 'Celsius'}">
@@ -152,8 +152,8 @@
 				</c:when>
 			</c:choose>
 				</div>
-			</div>
 		</c:forEach>
+		</div>
 	</div>
 	<div>
 		<c:choose>
