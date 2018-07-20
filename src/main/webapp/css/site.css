@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+div.headerImage{
+	position: relative;
+    text-align: center;
+	font:Amatic SC;
+}
+div.bottom-right{
+    position: absolute;
+    bottom: 550px;
+    padding-left: 850px;
+    font-size: 40px;
+    color: #e1e8f0;
+}
+
+.headerImage img{
+	width: 100%
+}
+div.parkImage img {
+	width: 100%;
+	border: 2px solid red;
+}
+div.links{
+	position: absolute;
+	bottom: 1px;
+	font-size: 30px;
+	padding-left: 8px;
+	color: #e1e8f0;
+}
+div.parkDetails{
+	border: 2px solid
+}
+div.DetailPage{
+	background-color: 
+}
+div.firstDay{
+	display: flex;
+	justify-content: flext-start;
+}
+div.firstDay img{
+	width:60%
+}
+div.fourDayTemp{
+	border: 2px solid blue;
+}
+div.fourDayTemp img{
+	width: 20%
+}
+div.weatherDetails{
+	display:inline-table;
+}

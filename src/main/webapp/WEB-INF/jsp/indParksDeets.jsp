@@ -41,13 +41,25 @@
 
 	<div class="weatherDetails">
 		<div class="firstDay">
-			Forecast:
-			<c:out value="${firstDay.forecast}" />
-			High:
-			<c:out value="${firstDay.high}" />
-			Low:
-			<c:out value="${firstDay.low}" />
 			<c:choose>
+					<c:when test="${tempSystem == 'Celsius'}">
+						Forecast:
+						<c:out value="${firstDay.forecast}" />
+						High:
+						<c:out value="${Math.round(firstDay.high-32/(9/5))}º" />
+						Low:
+						<c:out value="${Math.round(firstDay.low-32/(9/5))}º" />
+					</c:when>
+					<c:otherwise>
+						Forecast:
+						<c:out value="${firstDay.forecast}" />
+						High:
+						<c:out value="${firstDay.high}º" />
+						Low:
+						<c:out value="${firstDay.low}º" />
+					</c:otherwise>
+				</c:choose>
+					<c:choose>
 				<c:when test="${firstDay.forecast == 'snow'}">
 					<c:url var="firstDayImageUrl" value="/img/weather/snow.png" />
 					<img src="${firstDayImageUrl}" />
@@ -79,26 +91,37 @@
 					<c:when test="${firstDay.high > 75}">
 						<c:out value="Bring An Extra Gallon Of Water" />
 					</c:when>
-					<c:when test="${firstDay.high - weather.low > 20}">
-						<c:out value="Wear Breathable Layers" />
-					</c:when>
 					<c:when test="${firstDay.low < 20}">
 						<c:out value="Freezing Temperature: Please Limit Time Outdoors" />
+					</c:when>
+					<c:when test="${firstDay.high - firstDay.low > 20}">
+						<c:out value="Wear Breathable Layers" />
 					</c:when>
 				</c:choose>
 			</div>
 		</div>
 		<c:forEach items="${fourDay}" var="day">
 			<div class="fourDay">
-
-				Forecast:
-				<c:out value="${day.forecast}" />
-				High:
-				<c:out value="${day.high}" />
-				Low:
-				<c:out value="${day.low}" />
-			</div>
-			<c:choose>
+				<div class="fourDayTemp">
+				<c:choose>
+					<c:when test="${tempSystem == 'Celsius'}">
+						Forecast:
+						<c:out value="${day.forecast}" />
+						High:
+						<c:out value="${Math.round(day.high-32/(9/5))}º" />
+						Low:
+						<c:out value="${Math.round(day.low-32/(9/5))}º" />
+					</c:when>
+					<c:otherwise>
+						Forecast:
+						<c:out value="${day.forecast}" />
+						High:
+						<c:out value="${day.high}º" />
+						Low:
+						<c:out value="${day.low}º" />
+					</c:otherwise>
+				</c:choose>
+					<c:choose>
 				<c:when test="${day.forecast == 'snow'}">
 					<c:url var="weatherImageUrl" value="/img/weather/snow.png" />
 					<img src="${weatherImageUrl}" />
@@ -128,18 +151,7 @@
 					<img src="${firstDayImageUrl}" />
 				</c:when>
 			</c:choose>
-			<div class="temperature">
-				<c:choose>
-					<c:when test="${day.high > 75}">
-						<c:out value="Bring An Extra Gallon Of Water" />
-					</c:when>
-					<c:when test="${day.high - weather.low > 20}">
-						<c:out value="Wear Breathable Layers" />
-					</c:when>
-					<c:when test="${day.low < 20}">
-						<c:out value="Freezing Temperature: Please Limit Time Outdoors" />
-					</c:when>
-				</c:choose>
+				</div>
 			</div>
 		</c:forEach>
 	</div>
@@ -161,8 +173,8 @@
 					<div class="form-group">
 					<input type="hidden" id="parkCode" name="parkCode" value="${park.parkCode}" class="form-control" />
 					<input type="hidden" id="tempSystem" name="tempSystem" value="Fahrenheit" class="form-control" />
-					</div>
 					<button type="submit" class="btn btn-primary">Fahrenheit</button>
+					</div>
 				</form>
 			</c:otherwise>
 		</c:choose>

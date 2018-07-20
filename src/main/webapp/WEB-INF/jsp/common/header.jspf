@@ -11,19 +11,17 @@
 </head>
 <body>
     <header>
-    <div class = "parkImage">
-       				<c:url var = "parkImgUrl" value = "/img/logo.png"/>
-       						<img src="${parkImgUrl}"/>
-  		 	</div>
-        <h1>National Parks Capstone</h1>        
+    <div class = "headerImage">
+       			<img src="https://d3hne3c382ip58.cloudfront.net/resized/750x420/national-parks-wonders-summer-2018-tour-2-259323_0.JPG"width="device-width"/>
+  		 			<div class="bottom-right">Your Park Adventure Starts Here</div> 
+  	</div>     
     </header>
     <nav>
-        <ul>
-            <c:url var="homepageUrl" value="/"/>
-            <li><a href="${homepageUrls}">Home</a></li>
-            <c:url var="surveyUrl" value="/survey" />
-            <li><a href="${surveyUrl}">Survey</a></li>
-        </ul>
-        
+    <div class="links">
+          				  <c:url var="homepageUrl" value="/"/>
+         					  <a href="${homepageUrls}">Home</a>
+         			      <c:url var="surveyUrl" value="/survey" />
+           					 <a href="${surveyUrl}">Survey</a>
+      				 </div>
     </nav>
     <section id="main-content">
