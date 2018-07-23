@@ -42,7 +42,11 @@ padding-top: 1px;
 color: black;
 }
 
-
+div.newSurveyForm{
+	border: 2px solid red;
+	color: black;
+	
+}
 footer{
 	display:flex;
 	justify-content: center;
@@ -50,5 +54,4 @@ footer{
   position: relative;
 	height:100px;
 	color: black;
-	
-}
+	}
