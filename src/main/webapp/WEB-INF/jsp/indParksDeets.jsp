@@ -88,7 +88,7 @@
 		<script type='text/javascript' src='https://darksky.net/widget/default/35.714259,-83.5101638/us12/en.js?width=100%&height=350&title=Smoky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		<script type='text/javascript' src='https://darksky.net/widget/default/35.714259,-83.5101638/uk12/en.js?width=100%&height=350&title=Smoky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
-		<c:when test="${park.parkCode == 'gtnnp'}">
+		<c:when test="${park.parkCode == 'gtnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/43.6871545,-110.7354884/us12/en.js?width=100%&height=350&title=Grand Teton National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		<script type='text/javascript' src='https://darksky.net/widget/default/43.6871545,-110.7354884/uk12/en.js?width=100%&height=350&title=Grand Teton National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>

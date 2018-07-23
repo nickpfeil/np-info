@@ -18,7 +18,7 @@
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
-      background-color: #1abc9c; /* Green */
+      background-color: #a3c2c2; /* Green */
       color: #ffffff;
   }
   .bg-2 { 
@@ -26,7 +26,7 @@
       color: #ffffff;
   }
   .bg-3 { 
-      background-color: #5AC8C5; /* White */
+      background-color: #a3c2c2; /* White */
       color: #ffffff;
   }
   .bg-4 { 
@@ -78,18 +78,27 @@ h1 {
 h4{
    margin: 0 0 20px 0;
 }
-#contact-form {
-   background-color:#4c4c4c;
-   padding: 10px 20px 30px 20px;
+.surveyHeading {
+	text-align: center;
+}
+.formAlign {
+	margin: auto;
+	width: 50%;
+}
+.formBackground {
+	padding-top: 600px;
+}
+#contact-form  {
+	background-color:#4c4c4c;
+    padding: 10px 20px 30px 20px;
    max-width:100%;
-   float: left;
-   left: 50%;
    position: absolute;
    margin-top:30px;
-   margin-left: -260px;
+   
    border-radius:7px;
    -webkit-border-radius:7px;
    -moz-border-radius:7px;
+   
 }
 #contact-form input,   
 #contact-form select,   

@@ -3,7 +3,7 @@
   <!-- Footer -->
     <footer class="container-fluid bg-4 text-center">
       <div class="container">
-      <h4>Copyright &copy; Jamie Tanner  Nick Pfeil 2018</h4>
+      <strong>Copyright &copy; Jamie Tanner  Nick Pfeil 2018</strong>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<a href="https://www.facebook.com/nationalparkservice" class="fa fa-facebook" ></a>
 		<a href="https://www.twitter.com/natlparkservice" class="fa fa-twitter"></a>

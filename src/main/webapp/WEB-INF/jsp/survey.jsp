@@ -3,8 +3,9 @@
 <c:set var="pageTitle" value="Survey"/>
 
 <%@include file="common/header.jspf"%>
-<h2>National Park Survey</h2>
+<h2 class="surveyHeading">National Park Survey</h2>
 
+<div class="formAlign">
 <c:url var="formAction" value="/survey" />
 	<form method="POST" action="${formAction}">
 	<div id="contact-form">
@@ -61,4 +62,7 @@
 		   </form>
 
 	</div>
+	</form>
+	</div>
+	<div class=formBackground></div>
 <%@include file="common/footer.jspf"%>
