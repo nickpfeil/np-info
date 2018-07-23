@@ -65,7 +65,7 @@
 	</div>
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
-  <h3 class="weather">WEATHER</h3><br>
+  <h2 class="weather">WEATHER</h2><br>
     <div class="weatherDetails">
 	<c:choose>
 		<c:when test="${park.parkCode == 'gnp'}">
@@ -116,7 +116,7 @@
 
 <!-- Fourth Container -->
 <div class="container-fluid bg-4 text-center">
-  <h3 class="margin">MAP</h3>
+  <h3 class="margin">Location</h3>
  	<div class="firstDeets">
 		<div class="map">
 	<c:choose>

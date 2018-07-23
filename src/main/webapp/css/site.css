@@ -2,15 +2,7 @@
 div.headerImage{
 	position: relative;
 }
-footer{
-	display:flex;
-	justify-content: center;
-	align-items: space-between;
-  position: relative;
-	height:100px;
-	color: black;
-	
-}
+
 .link{
 	position: absolute;
   top: 50%;
@@ -49,31 +41,14 @@ div.text-block {
 padding-top: 1px;
 color: black;
 }
-div.firstDeets{
-	display: flex;
-	align-items: center;
-	width:400px;
-	height:80px;
 
-}
-div.firstDeets img{
-	width:20%;
-}
-div.parkMilesOfTrail{
-	display: flex;
-	align-items: center;
-	width:400px;
-	height:80px;
-}
-div.parkMilesOfTrail img{
-	width: 20%;
-}
-div.parkNumberOfCampsites{
+
+footer{
 	display:flex;
-	align-items:center;
-	width:400px;
-	height: 80px;
-}
-div.parkNumberOfCampsites img{
-	width:20%;
+	justify-content: center;
+	align-items: space-between;
+  position: relative;
+	height:100px;
+	color: black;
+	
 }
