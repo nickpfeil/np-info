@@ -13,12 +13,10 @@
        				</a>
        				</div>
        			</div>
-       			<div class="parkDetails">
        				<div class = "parkInspirationalQoute">
        					"<c:out value = "${park.inspirationalQuote}"/>"
        					~<c:out value = "${park.inspirationalQuoteSource}"/>
        				</div>
-       			</div>
        	</c:forEach>
   	</div>
 <%@include file="common/footer.jspf" %>

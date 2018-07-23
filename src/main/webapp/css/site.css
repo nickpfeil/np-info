@@ -1,9 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 div.headerImage{
 	position: relative;
 }
-
+footer{
+	display:flex;
+	justify-content: center;
+	align-items: space-between;
+  position: relative;
+	height:100px;
+	color: black;
+	
+}
+.link{
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+	
+	
+}
 div.text-block {
 	font:Amatic SC;
     position: absolute;
@@ -22,53 +45,35 @@ div.text-block {
 .headerImage img{
 	width: 100%
 }
-div.parkImage img {
-	width: 50%;
-	border: 2px solid red;
+.weather{
+padding-top: 1px;
+color: black;
 }
-div.links{
-	display:flex;
-	justify-content: flex-end;
-	align-items: flex-start;
-	position: absolute;
-	bottom: 450px;
-	left: 1100px; 
-	font-size: 30px;
-	color: #e1e8f0;
-	padding-left:15px;
-}
-.homeButton{
-	background-color: #555555; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-div.parkDetails{
-	border: 2px solid
-}
-div.DetailPage{
-	background-color: 
-}
-div.firstDay{
+div.firstDeets{
 	display: flex;
-	justify-content: flext-start;
+	align-items: center;
+	width:400px;
+	height:80px;
+
 }
-div.firstDay img{
-	width:30%
+div.firstDeets img{
+	width:20%;
 }
-div.fourDayTemp{
-	border: 2px solid blue;
+div.parkMilesOfTrail{
+	display: flex;
+	align-items: center;
+	width:400px;
+	height:80px;
 }
-div.fourDayTemp img{
-	width: 20%
+div.parkMilesOfTrail img{
+	width: 20%;
 }
-div.weatherDetails{
-	display:inline-table;
+div.parkNumberOfCampsites{
+	display:flex;
+	align-items:center;
+	width:400px;
+	height: 80px;
 }
-div.parkInspirationalQoute{
-	font-size: 28px;
+div.parkNumberOfCampsites img{
+	width:20%;
 }

@@ -197,5 +197,6 @@ public class Park {
 	public void setNumberOfAnimalSpecies(int numberOfAnimalSpecies) {
 		this.numberOfAnimalSpecies = numberOfAnimalSpecies;
 	}
+
 	
 }
