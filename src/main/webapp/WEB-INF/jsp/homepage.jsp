@@ -19,7 +19,7 @@
 				<c:choose>
 					<c:when test="${counter == 1}">
 						<div class="item active">
-							<div class="parkImage">
+							<div class="parkHomeImage">
 								<c:url var="indParksDeetsUrl"
 									value="/indParksDeets?parkCode=${park.parkCode}" />
 								<a href="${indParksDeetsUrl}"> <c:url var="parkImgUrl"
@@ -29,17 +29,18 @@
 							</div>
 							<div class="carousel-caption">
 								<h3>
-									<c:out value="${park.inspirationalQuote}" />
+									<c:out value="${park.parkName}" />
 								</h3>
 								<p>
-									<c:out value="${park.inspirationalQuoteSource}" />
+									<c:out value="${park.inspirationalQuote}" /><br>
+									<c:out value="- ${park.inspirationalQuoteSource}" />
 								</p>
 							</div>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="item">
-							<div class="parkImage">
+							<div class="parkHomeImage">
 								<c:url var="indParksDeetsUrl"
 									value="/indParksDeets?parkCode=${park.parkCode}" />
 								<a href="${indParksDeetsUrl}"> <c:url var="parkImgUrl"
@@ -49,10 +50,11 @@
 							</div>
 							<div class="carousel-caption">
 								<h3>
-									<c:out value="${park.inspirationalQuote}" />
+									<c:out value="${park.parkName}" />
 								</h3>
 								<p>
-									<c:out value="${park.inspirationalQuoteSource}" />
+									<c:out value="${park.inspirationalQuote}" /><br>
+									<c:out value="- ${park.inspirationalQuoteSource}" />
 								</p>
 							</div>
 						</div>

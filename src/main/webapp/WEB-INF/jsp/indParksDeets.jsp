@@ -65,50 +65,106 @@
 	</div>
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
-  <h2 class="weather">WEATHER</h2><br>
+  <h2 class="weather" id="temperature">WEATHER</h2><br>
     <div class="weatherDetails">
+    <c:choose>
+    <c:when  test="${tempSystem == 'Fahrenheit' || tempSystem == null}">
 	<c:choose>
 		<c:when test="${park.parkCode == 'gnp'}">
 			<script type='text/javascript' src='https://darksky.net/widget/default/48.4949755,-113.9810756/us12/en.js?width=100%&height=350&title=Glacier National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-			<script type='text/javascript' src='https://darksky.net/widget/default/48.4949755,-113.9810756/uk12/en.js?width=100%&height=350&title=Glacier National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'cvnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/41.2411668,-81.55261759999999/us12/en.js?width=100%&height=350&title=Cuy. Valley National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/41.2411668,-81.55261759999999/uk12/en.js?width=100%&height=350&title=Cuy. Valley National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'enp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/25.4687224,-80.4775569/us12/en.js?width=100%&height=350&title=Everglades National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/25.4687224,-80.4775569/uk12/en.js?width=100%&height=350&title=Everglades National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'gcnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/35.9735954,-112.1265569/us12/en.js?width=100%&height=350&title=Gr. Canyon National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/35.9735954,-112.1265569/uk12/en.js?width=100%&height=350&title=Gr. Canyon National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'gsmnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/35.714259,-83.5101638/us12/en.js?width=100%&height=350&title=Smoky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/35.714259,-83.5101638/uk12/en.js?width=100%&height=350&title=Smoky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'gtnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/43.6871545,-110.7354884/us12/en.js?width=100%&height=350&title=Grand Teton National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/43.6871545,-110.7354884/uk12/en.js?width=100%&height=350&title=Grand Teton National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'mrnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/46.7502405,-121.812778/us12/en.js?width=100%&height=350&title=Mt. Rainer National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/46.7502405,-121.812778/uk12/en.js?width=100%&height=350&title=Mt. Rainer National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'rmnp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/40.25220729999999,-105.8230671/us12/en.js?width=100%&height=350&title=Rocky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/40.25220729999999,-105.8230671/uk12/en.js?width=100%&height=350&title=Rocky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'ynp'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/44.4154952,-110.5754846/us12/en.js?width=100%&height=350&title=Yellowstone National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
-		<script type='text/javascript' src='https://darksky.net/widget/default/44.4154952,-110.5754846/uk12/en.js?width=100%&height=350&title=Yellowstone National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 		<c:when test="${park.parkCode == 'ynp2'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/37.74557009999999,-119.5936038/us12/en.js?width=100%&height=350&title=Yosemite National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=us&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+	</c:choose>
+	</c:when>
+	<c:otherwise>
+	<c:choose>
+	<c:when test="${park.parkCode == 'gnp'}">
+			<script type='text/javascript' src='https://darksky.net/widget/default/48.4949755,-113.9810756/uk12/en.js?width=100%&height=350&title=Glacier National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'cvnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/41.2411668,-81.55261759999999/uk12/en.js?width=100%&height=350&title=Cuy. Valley National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'enp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/25.4687224,-80.4775569/uk12/en.js?width=100%&height=350&title=Everglades National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'gcnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/35.9735954,-112.1265569/uk12/en.js?width=100%&height=350&title=Gr. Canyon National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'gsmnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/35.714259,-83.5101638/uk12/en.js?width=100%&height=350&title=Smoky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'gtnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/43.6871545,-110.7354884/uk12/en.js?width=100%&height=350&title=Grand Teton National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'mrnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/46.7502405,-121.812778/uk12/en.js?width=100%&height=350&title=Mt. Rainer National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'rmnp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/40.25220729999999,-105.8230671/uk12/en.js?width=100%&height=350&title=Rocky Mtn. National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'ynp'}">
+		<script type='text/javascript' src='https://darksky.net/widget/default/44.4154952,-110.5754846/uk12/en.js?width=100%&height=350&title=Yellowstone National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
+		</c:when>
+		<c:when test="${park.parkCode == 'ynp2'}">
 		<script type='text/javascript' src='https://darksky.net/widget/default/37.74557009999999,-119.5936038/uk12/en.js?width=100%&height=350&title=Yosemite National Park&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=def704&fontFamily=Palatino&customFont=&units=uk&htColor=fd0000&ltColor=0400fd&displaySum=yes&displayHeader=yes'></script>
 		</c:when>
 	</c:choose>
+	</c:otherwise>
+	</c:choose>
+	<div class="tempButton">
+				<c:choose>
+					<c:when test="${tempSystem == 'Fahrenheit' || tempSystem == null}">
+						<c:url var="tempSystemUrl" value="/indParksDeets" />
+						<form action="${tempSystemUrl}" method="POST">
+							<div class="form-group">
+								<input type="hidden" id="parkCode" name="parkCode"
+									value="${park.parkCode}" class="form-control" /> <input
+									type="hidden" id="tempSystem" name="tempSystem" value="Celsius"
+									class="form-control" />
+							</div>
+							<button type="submit" class="btn btn-primary">Celsius</button>
+						</form>
+					</c:when>
+					<c:otherwise>
+						<c:url var="tempSystemUrl" value="/indParksDeets" />
+						<form action="${tempSystemUrl}" method="POST">
+							<div class="form-group">
+								<input type="hidden" id="parkCode" name="parkCode"
+									value="${park.parkCode}" class="form-control" /> <input
+									type="hidden" id="tempSystem" name="tempSystem"
+									value="Fahrenheit" class="form-control" />
+								<button type="submit" class="btn btn-primary">Fahrenheit</button>
+							</div>
+						</form>
+					</c:otherwise>
+				</c:choose>
+			</div>
 <hr></hr>
 	<br>
   </div>

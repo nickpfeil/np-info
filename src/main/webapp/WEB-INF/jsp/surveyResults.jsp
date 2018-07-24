@@ -2,9 +2,10 @@
 <c:set var="pageTitle" value="Survey Results" />
 <%@include file="common/header.jspf"%>
 <div class="surveyResultsPage">
-	<ol>
+	<c:set var="counter" value="1"/>
+	
 		<c:forEach var="park" items="${parks}">
-			<li><div class="surveyDetails">
+			<div class="surveyDetails">
 					<div class="parkImage">
 						<c:url var="indParksDeetsUrl"
 							value="/indParksDeets?parkCode=${park.parkCode}" />
@@ -13,19 +14,22 @@
 							src="${parkImgUrl}" />
 						</a>
 					</div>
-				</div>
+			
 				<div class="descriptions">
 					<div class="indPark">
 						<div class="parkName">
-							<c:out value="${park.state}" />
+							<c:out value="${counter}. "/>
+							<c:out value="${park.parkName}" />
 						</div>
 						<div class="parkDescription">
-							Park Description
+							<c:out value="Park Description: "></c:out>
 							<c:out value="${park.parkDescription}"></c:out>
 						</div>
 					</div>
-				</div></li>
+				</div>
+				</div>
+			<c:set var="counter" value="${counter+1}"/>
 		</c:forEach>
-	</ol>
+
 </div>
 <%@include file="common/footer.jspf"%>

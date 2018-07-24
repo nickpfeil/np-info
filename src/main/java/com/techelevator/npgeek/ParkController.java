@@ -55,7 +55,7 @@ public class ParkController {
 			userSession.setAttribute("tempSystem", tempSystem);
 		}
 		
-		return "redirect:/indParksDeets?parkCode=" + parkCode;
+		return "redirect:/indParksDeets?parkCode=" + parkCode + "#temperature";
 	}
 	
 	
