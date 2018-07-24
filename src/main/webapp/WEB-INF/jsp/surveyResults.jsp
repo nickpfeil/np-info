@@ -3,7 +3,7 @@
 <%@include file="common/header.jspf"%>
 <div class="surveyResultsPage">
 	<c:set var="counter" value="1"/>
-	
+	<br><h1 class="surveyHeading">Favorite Parks</h1><hr>
 		<c:forEach var="park" items="${parks}">
 			<div class="surveyDetails">
 					<div class="parkImage">

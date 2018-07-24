@@ -211,11 +211,11 @@ input:required, textarea:required {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">National Parks</a>
+      <c:url var="homepageUrl" value="/"/>
+      <a class="navbar-brand" href="${homepageUrl}">National Parks</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-      	<c:url var="homepageUrl" value="/"/>
         <li><a href="${homepageUrl}">HOME</a></li>
         <c:url var="surveyUrl" value="/survey"/>
         <li><a href="${surveyUrl}">SURVEY</a></li>
