@@ -75,6 +75,10 @@ body {
 /* Contact Form Styles */
 h1 {
    margin: 10px 0 0 0;
+
+}
+h2{
+color: #2B2828;
 }
 h4{
    margin: 0 0 20px 0;
@@ -124,6 +128,7 @@ h4{
    font-size: 15px;  
    margin-bottom: 2px;
    font-family: Arial, san-serif;
+   color: #2B2828;
 } 
 #contact-form input,   
 #contact-form select,   
